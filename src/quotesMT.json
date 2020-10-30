@@ -1,17 +1,14 @@
 [
   {
     "id": 1,
-    "author": "Mark Twain",
     "quote": "Go to Heaven for the climate, Hell for the company."
   },
   {
     "id": 2,
-    "author": "Mark Twain",
     "quote": "A lie can run around the world six times while the truth is still trying to put on its pants."
   },
   {
     "id": 3,
-    "author": "Mark Twain",
     "quote": "Better to keep your mouth shut and appear stupid than to open it and remove all doubt."
   }
 ]

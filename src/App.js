@@ -15,29 +15,23 @@ class App extends React.Component {
 
   sendMark = () => {
     this.setState({ author: "Mark Twain" });
-    this.setState({ count: 0 });
+    // this.setState({ count: 0 });
     this.setState({ source: quotesMT[this.state.count].quote });
   };
 
   sendBuddha = () => {
     this.setState({ author: "Buddha" });
-    this.setState({ count: 0 });
+    // this.setState({ count: 0 });
     this.setState({ source: quotesB[this.state.count].quote });
   };
 
   sendAL = () => {
     this.setState({ author: "Abraham Lincoln" });
-    this.setState({ count: 0 });
+    // this.setState({ count: 0 });
     this.setState({ source: quotesAL[this.state.count].quote });
   };
 
-  handleChange = () => {
-    console.log(this.state.count);
-    if (this.state.count === 2) {
-      this.setState({ count: 0 });
-    } else {
-      this.setState({ count: this.state.count + 1 });
-    }
+  changeQuote = () => {
     if ( this.state.author === "Mark Twain" ) {
       this.setState({ source: quotesMT[this.state.count].quote });
     } else if ( this.state.author === "Buddha" ){
@@ -45,6 +39,17 @@ class App extends React.Component {
     } else {
       this.setState({ source: quotesAL[this.state.count].quote });
     }
+  }
+  handleChange = () => {
+    console.log(this.state.count);
+    if (this.state.count === 2) {
+      this.setState({ count: 0 });
+      this.changeQuote();
+    } else {
+      this.setState({ count: this.state.count + 1 });
+      this.changeQuote();
+    }
+    console.log(this.state.count);
   };
 
   render() {
