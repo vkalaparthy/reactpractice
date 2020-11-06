@@ -8,34 +8,37 @@ import quotesAL from "./quotesAL.json";
 class App extends React.Component {
 
   state = {
-    author: "Mark Twain",
+    author: "",
     count: 0,
-    quote: quotesMT[0].quote
+    quote: ""
   };
 
   selectMark = () => {
+    console.log("firstTime");
     this.setState({ author: "Mark Twain" });
     this.setState({ count: 1 });
-    this.setState({ quote: quotesMT[this.state.count].quote});
+    this.setState({ quote: quotesMT[0].quote});
   };
 
   selectBuddha = () => {
     this.setState({ author: "Buddha" });
-    this.setState({ count: 0 });
+    this.setState({ count: 1 });
     // this.setState({ source: quotesB });
-    this.setState({ quote: quotesB[this.state.count].quote });
+    this.setState({ quote: quotesB[0].quote });
   };
 
   selectAL = () => {
     this.setState({ author: "Abraham Lincoln" });
-    this.setState({ count: 0 });
+    this.setState({ count: 1 });
     // this.setState({ source: quotesAL });
-    this.setState({ quote: quotesAL[this.state.count].quote });
+    this.setState({ quote: quotesAL[0].quote });
   };
 
   nextQuote = () => {
-
+    console.log("next quote");
     const { count, author } = this.state;
+
+    console.log("count: "+count);
 
     switch(author) {
       case "Mark Twain":
@@ -49,6 +52,7 @@ class App extends React.Component {
     }
   }
   handleChange = () => {
+    console.log("handle Change");
     console.log(this.state.count);
     if (this.state.count === 2) {
       this.setState({ count: 0 });

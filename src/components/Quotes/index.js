@@ -24,11 +24,17 @@ function Quotes(props) {
       <div className="container">
         <div className="jumbotron">
           <h1>Quotes for us!</h1>
-          <p> <strong>{props.author}</strong></p>
-          <h5> {props.quote}</h5>
-          <p>
-            <button className="btn btn-secondary btn-lg" onClick={() => props.changeQuote()}>Change Quote</button>
-          </p>
+          {props.author ? (
+            <>
+              <p> <strong>{props.author}</strong></p>
+              <h5> {props.quote}</h5>
+              <p>
+                <button className="btn btn-secondary btn-lg" onClick={() => props.changeQuote()}>Change Quote</button>
+              </p>
+            </>
+          ) : (
+            <h5>Select any button to continue!</h5>
+          )} 
         </div>
       </div>
     )
